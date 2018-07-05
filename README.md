@@ -55,7 +55,7 @@ Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ python -m scripts.label_ima
 >     --graph=tf_files/retrained_graph.pb  \
 >     --image=tf_files/KI/Menschen/1.jpg                                        
 
-Evaluation time (1-image): 1.845s // Dauer der Analyse
+> Evaluation time (1-image): 1.845s // Dauer der Analyse
  
 Ergebnis, zu viel viel Prozent, das Bild der Kategorie entspricht -> Bild zeigt 100% Mensch an
 > menschen (score=1.00000) 
