@@ -16,28 +16,28 @@ Code Eingabe:
 > Manjas-MacBook-Pro:~ manjangoc$ git clone https://github.com/googlecodelabs/tensorflow-for-poets-2
 > Cloning into 'tensorflow-for-poets-2'...
 > remote: Counting objects: 405, done.
-remote: Total 405 (delta 0), reused 0 (delta 0), pack-reused 405
-Receiving objects: 100% (405/405), 33.96 MiB | 7.08 MiB/s, done.
-Resolving deltas: 100% (149/149), done.
-Checking out files: 100% (142/142), done.
+> remote: Total 405 (delta 0), reused 0 (delta 0), pack-reused 405
+> Receiving objects: 100% (405/405), 33.96 MiB | 7.08 MiB/s, done.
+> Resolving deltas: 100% (149/149), done.
+> Checking out files: 100% (142/142), done.
 
 //Der Ordner wird aufgerufen, damit man anschließend dadrin arbeiten kann. 
-Manjas-MacBook-Pro:~ manjangoc$ cd tensorflow-for-poets-2
+> Manjas-MacBook-Pro:~ manjangoc$ cd tensorflow-for-poets-2
 
 // Aufrufen der einzelnen Ordner // Kategorien zum Analysieren
-Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ ls tf_files/KI
-Flecken   Menschen  Text    Tiere
+> Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ ls tf_files/KI
+> Flecken   Menschen  Text    Tiere
 
 // TensorBoard wird aufgerufen, damit graphische Analyse im Browser angezeigt werden kann.
-Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ tensorboard --logdir tf_files/training_summaries &
-[1] 8595
+> Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ tensorboard --logdir tf_files/training_summaries &
+> [1] 8595
 
 // Retrain skript wird mit phyton abgerufen -> TensorFlow Hub repo
-Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ python -m scripts.retrain -h
+> Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ python -m scripts.retrain -h
 
 // Training der verschiedenen Klassen
-Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ 
-python -m scripts.retrain \                                                        // Skript wird abgefufen
+> Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ 
+> python -m scripts.retrain \                                                        // Skript wird abgefufen
 >   --bottleneck_dir=tf_files/bottlenecks \                                        // Kategorien werden erstellt
 >   --how_many_training_steps=500 \                                                // Anzahl der Trainingsstufen -> weglassen,      dann gegen unendlich (ca. 4000 Schitte)
 >   --model_dir=tf_files/models/ \                                              
@@ -55,8 +55,8 @@ Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ python -m scripts.label_ima
 Evaluation time (1-image): 1.845s // Dauer der Analyse
  
 // Ergebnis, zu viel viel Prozent, das Bild der Kategorie entspricht
-menschen (score=1.00000) // Bild ist 100% ein Mensch
-tiere (score=0.00000)
-flecken (score=0.00000)
-text (score=0.00000)
+> menschen (score=1.00000) // Bild ist 100% ein Mensch
+> tiere (score=0.00000)
+> flecken (score=0.00000)
+> text (score=0.00000)
 
