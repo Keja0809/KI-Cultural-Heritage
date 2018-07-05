@@ -36,7 +36,7 @@ Retrain skript wird mit phyton abgerufen -> TensorFlow Hub repo
 > Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ python -m scripts.retrain -h
 
 Training der verschiedenen Klassen
-1. Skript wird angeufen
+1. Skript wird abgerufen
 2. Kategorien werden erstellt
 
 > Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ 
@@ -57,7 +57,7 @@ Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ python -m scripts.label_ima
 
 > Evaluation time (1-image): 1.845s // Dauer der Analyse
  
-Ergebnis, zu viel viel Prozent, das Bild der Kategorie entspricht -> Bild zeigt 100% Mensch an
+Ausgabe Ergebnis, zu viel viel Prozent, das Bild der Kategorie entspricht -> Bild zeigt 100% Mensch an
 > menschen (score=1.00000) 
 > tiere (score=0.00000)
 > flecken (score=0.00000)
