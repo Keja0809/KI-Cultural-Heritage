@@ -13,6 +13,7 @@ Technologie: Wir nutzen Tensorflow als Programm und arbeiten nach dem Prinzip vo
 Code Eingabe: 
 
 // Zunächst wird das git repository von Tensorflow for poets runtergeladen
+
 Manjas-MacBook-Pro:~ manjangoc$ git clone https://github.com/googlecodelabs/tensorflow-for-poets-2
 Cloning into 'tensorflow-for-poets-2'...
 remote: Counting objects: 405, done.
@@ -22,13 +23,16 @@ Resolving deltas: 100% (149/149), done.
 Checking out files: 100% (142/142), done.
 
 //Der Ordner wird aufgerufen, damit man anschließend dadrin arbeiten kann. 
+
 Manjas-MacBook-Pro:~ manjangoc$ cd tensorflow-for-poets-2
 
 // Aufrufen der einzelnen Ordner // Kategorien zum Analysieren
+
 Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ ls tf_files/KI
 Flecken   Menschen  Text    Tiere
 
 // TensorBoard wird aufgerufen, damit graphische Analyse im Browser angezeigt werden kann.
+
 Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ tensorboard --logdir tf_files/training_summaries &
 [1] 8595
 
