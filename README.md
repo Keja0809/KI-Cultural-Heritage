@@ -90,7 +90,7 @@ Nach dem Testlauf wurden die "Default" Graphen mit unserem "retrainet_graph.pb" 
 
 In der Classifier.Activity.java Datei musste der Input und der Output auf "input" und "final_result" gesetzt werden. Dies wurde über folgenden Befehl ausgeführt:
 
-> private static final String INPUT_NAME = "input"
+> private static final String INPUT_NAME = "input";
 > private static final String OUTPUT_NAME = "final_result";
 
 
