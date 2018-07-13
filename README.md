@@ -64,3 +64,4 @@ Ausgabe Ergebnis, zu viel viel Prozent, das Bild der Kategorie entspricht -> Bil
 > flecken (score=0.00000)
 > text (score=0.00000)
 
+laskjflasjdf
