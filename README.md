@@ -64,4 +64,40 @@ Ausgabe Ergebnis, zu viel viel Prozent, das Bild der Kategorie entspricht -> Bil
 > flecken (score=0.00000)
 > text (score=0.00000)
 
-laskjflasjdf
+
+Erstellung einer Visuellen Ausgabe:
+
+Grundlage: retrained_graph.pb
+
+Verwendetes Programm: 
+Android Studio
+
+
+Testlauf mit den Graphen welche bereits im Download Ordner Tensorflow for poets 2 enthalten sind.
+
+1. Öffnen der Build.gradle Datei
+2. Sync der Gradle Datei
+3. Build APK
+4. Erstellte APK Datei auf ein Android Gerät übertragen
+5. Auf dem Android Gerät Datei ausführen und installieren
+6. Öffnen; App funktioniert
+
+Nach dem Testlauf wurden die "Default" Graphen mit unserem "retrainet_graph.pb" ausgetauscht. Und die txt Datei wurde mit einer Datei mit unseren Labels ersetzt, also Mensch, Tier, Text und Flecken.
+
+> cp tf_files/rounded_graph.pb android/tfmobile/assets/graph.pb
+> cp tf_files/retrained_labels.txt android/tfmobile/assets/labels.txt
+
+
+In der Classifier.Activity.java Datei musste der Input und der Output auf "input" und "final_result" gesetzt werden. Dies wurde über folgenden Befehl ausgeführt:
+
+> private static final String INPUT_NAME = "input";
+> private static final String OUTPUT_NAME = "final_result";
+
+
+Anschließend wurde die Build.Gradle Datei erneut geöffnet und eine neue APK Datei erstellt. 
+Diese APK Datei wurde erneut auf das Android Gerät übertragen, geöffnet und installiert.
+
+Nun Läuft die App auf unserem Gerät mit den Labels Mensch, Tier, Flecken, Text und erkennt die entsprechenden Höhlenmalereien. 
+
+
+
