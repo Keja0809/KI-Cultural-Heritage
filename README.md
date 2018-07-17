@@ -82,13 +82,14 @@ Testlauf mit den Graphen welche bereits im Download Ordner Tensorflow for poets 
 5. Auf dem Android Gerät Datei ausführen und installieren
 6. Öffnen; App funktioniert
 
-Nach dem Testlauf wurden die "Default" Graphen mit unserem "retrainet_graph.pb" ausgetauscht. Und die txt Datei wurde mit einer Datei mit unseren Labels ersetzt, also Mensch, Tier, Text und Flecken.
+Nach dem Testlauf wurden die "Default" Graphen mit unserem "retrained_graph.pb" ausgetauscht. Und die txt Datei wurde mit einer Datei mit unseren Labels ersetzt, also Mensch, Tier, Text und Flecken.
 
 > cp tf_files/rounded_graph.pb android/tfmobile/assets/graph.pb
 > cp tf_files/retrained_labels.txt android/tfmobile/assets/labels.txt
 
 
-In der Classifier.Activity.java Datei musste der Input und der Output auf "input" und "final_result" gesetzt werden. Dies wurde über folgenden Befehl ausgeführt:
+In der Classifier.Activity.java Datei musste der Input und der Output auf "input" und "final_result" gesetzt werden. Dies war notwendig, da die Default Graphen andere Input und Output Names haben. Unsere haben wir über das Tensorboard direkt von unserem Graphen abgelesen. 
+Das Tauschen der Input und Outpur Names wurde mit diesem Befehl durchgeführt (kann aber auch manuell erfolgen):
 
 > private static final String INPUT_NAME = "input";
 > private static final String OUTPUT_NAME = "final_result";
