@@ -13,7 +13,7 @@ Manjas-MacBook-Pro:~ manjangoc$ cd tensorflow-for-poets-2
 # öffnen des Ordners tensorflow for poets 2 
 
 Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ ls tf_files/KI
-# Das Verzeichnis KI wurd erstellt und wird gelesen 
+# Das Verzeichnis KI wird ausgegeben
 
 Flecken   Menschen  Text    Tiere
 # Die Ordner Flecken, Menschen, Text und Tiere werden erstellt
@@ -26,15 +26,15 @@ Manjas-MacBook-Pro:tensorflow-for-poets-2 manjangoc$ ARCHITECTURE="mobilenet_0.5
 python -m scripts.retrain \
   --bottleneck_dir=tf_files/bottlenecks \
   --how_many_training_steps= \ # Wir arbeiten mit unendlich vielen Trainingssteps
-  --model_dir=tf_files/models/ \
+  --model_dir=tf_files/models/ \ #der Ordner "models" wird als Unterordner in tf_files erstellt
   --summaries_dir=tf_files/training_summaries/"${ARCHITECTURE}" \
-  --output_graph=tf_files/retrained_graph.pb \
-  --output_labels=tf_files/retrained_labels.txt \
+  --output_graph=tf_files/retrained_graph.pb \ #erstellt den Output graphen namens "retrained_graph.pb" mit den Trainingsdaten
+  --output_labels=tf_files/retrained_labels.txt \ #erstellt eine txt mit den labels (Kategorien)
   --architecture="${ARCHITECTURE}" \
-  --image_dir=tf_files/KI
+  --image_dir=tf_files/KI #Pfad aus welchen die Trainingsdaten geholt werden sollen
 
 # bottlenecks werden erstellt: bottelnecks sind die letzte Ebende vor der tatsächlichen Klassifizierung 
-# Zu dem Ordner KI wurden in 500 Training steps verschiedene Inhalte erstellt:
+# Zu dem Ordner KI wurden in ca. 4000 Training steps verschiedene Inhalte erstellt:
 # tf_files, summaries, graph, labels 
 # Das Training läuft weiterhin
 
@@ -1302,7 +1302,7 @@ INFO:tensorflow:2018-06-30 18:58:51.943013: Step 3990: Validation accuracy = 100
 INFO:tensorflow:2018-06-30 18:58:52.531434: Step 3999: Train accuracy = 100.0%
 INFO:tensorflow:2018-06-30 18:58:52.531635: Step 3999: Cross entropy = 0.000385
 INFO:tensorflow:2018-06-30 18:58:52.597795: Step 3999: Validation accuracy = 100.0% (N=100)
-INFO:tensorflow:Final test accuracy = 93.5% (N=31)
+INFO:tensorflow:Final test accuracy = 93.5% (N=31) #Unser Trainingsgenauigkeit liegt bei 93.5%
 INFO:tensorflow:Froze 2 variables.
 Converted 2 variables to const ops.
 # 4000 trainingssteps wurden durchlaufen
@@ -1335,8 +1335,8 @@ text (score=0.00000)
 # Um unsere Ausgabe zu visualisieren haben wir eine App zur Objekterkennung an unser Projekt angepasst  
 # Die App wird in Android-Studio erstellt
 # Mit diesem Programm werden unsere Datein zur KI geöfftnet 
-# Nach dem Testlauf wurden die "Default" Graphen mit unserem "retrainet_graph.pb" ausgetauscht. Und die txt Datei wurde mit einer Datei mit unseren Labels ersetzt, also Mensch, Tier, Text und Flecken.
-#In der Classifier.Activity.java Datei musste der Input und der Output auf "input" und "final_result" gesetzt werden. Dies wurde über folgenden Befehl ausgeführt
+# Nach dem Testlauf wurden die "Default" Graphen mit unserem "retrained_graph.pb" ausgetauscht. Und die txt Datei wurde mit einer Datei mit unseren Labels ersetzt, also Mensch, Tier, Text und Flecken (retrained_labels.txt aus dem Training).
+#In der Classifier.Activity.java Datei musste der Input und der Output auf "input" und "final_result" gesetzt werden
 #Anschließend wurde die Build.Gradle Datei erneut geöffnet und eine neue APK Datei erstellt. Diese APK Datei wurde erneut auf das Android Gerät übertragen, geöffnet und installiert.
 # Nun kann die App, die auf unseren Trainingsdaten beruht, auf einem Handy ausgeführt werden 
 
