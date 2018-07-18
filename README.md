@@ -64,6 +64,7 @@ Ausgabe Ergebnis, zu viel viel Prozent, das Bild der Kategorie entspricht -> Bil
 > flecken (score=0.00000)
 > text (score=0.00000)
 
+__________________________
 
 Erstellung einer Visuellen Ausgabe:
 
@@ -72,25 +73,24 @@ Grundlage: retrained_graph.pb und retrained_labels.txt aus dem ersten Training
 Verwendetes Programm: 
 Android Studio
 
-Zunächst haben wir unseren retrained_graph.pb für den mobilen Gebrauch optimiert. Der Graph sollte ingesamt kleiner werden, wodurch die App schneller läuft und ein geringeres Risiko hat, abzustürzen. Dazu wurden nicht notwendige Daten, wie beispielsweise die Trainingsdaten, aus dem Graphen gelöscht.
+Zunächst haben wir unseren retrained_graph.pb für den mobilen Gebrauch optimiert. Der Graph sollte ingesamt kleiner werden, wodurch die App schneller läuft und ein geringeres Risiko hat abzustürzen. Dazu wurden nicht notwendige Daten, wie z.B. die Trainingsdaten, aus dem Graphen gelöscht.
 Durch das Tool optimize_for_inference wurden alle Daten aus dem Graphen entfernt, die nicht für den input und output notwendig sind.
 
-python -m tensorflow.python.tools.optimize_for_inference \
-  --input=tf_files/retrained_graph.pb \
-  --output=tf_files/optimized_graph.pb \
-  --input_names="input" \
-  --output_names="final_result"
+// Durch diesen Befehl wurde der optimized_graph.pb neu erstellt.
+> python -m tensorflow.python.tools.optimize_for_inference \
+>  --input=tf_files/retrained_graph.pb \
+>  --output=tf_files/optimized_graph.pb \
+>  --input_names="input" \
+>  --output_names="final_result"
   
-  Durch diesen Befehl wurde der optimized_graph.pb neu erstellt.
-  Als nächstes wurde der optimized_praph.pb noch komprimiert:
-  
-  python -m scripts.quantize_graph \
-  --input=tf_files/optimized_graph.pb \
-  --output=tf_files/rounded_graph.pb \
-  --output_node_names=final_result \
-  --mode=weights_rounded
-  
-  Hier wird der rounded_graph.pb erstellt, welcher deutlich kleiner ist und für die App verwendet wurde.
+// Als nächstes wurde der optimized_praph.pb noch komprimiert:  
+>  python -m scripts.quantize_graph \
+>  --input=tf_files/optimized_graph.pb \
+>  --output=tf_files/rounded_graph.pb \
+>  --output_node_names=final_result \
+>  --mode=weights_rounded
+
+Hier wird der rounded_graph.pb erstellt, welcher deutlich kleiner ist und für die App verwendet wurde.
 
 Testlauf mit den Graphen welche bereits im Download Ordner Tensorflow for poets 2 enthalten sind.
 
